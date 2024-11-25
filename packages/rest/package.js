@@ -1,6 +1,6 @@
 Package.describe({
   name: 'smardo:rest',
-  version: '1.1.2',
+  version: '1.1.4',
 
   // Brief, one-line summary of the package.
   summary: 'The easiest way to add a REST API to your Meteor app',
@@ -14,21 +14,20 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('2.3.6');
+  api.versionsFrom('2.16');
 
   api.use([
     'check',
     'ddp',
     'ejson',
-    'meteor',
-    'mongo',
-    'simple:json-routes@2.1.0',
+    'mongo@1.0.0 || 2.0.0',
+    'simple:json-routes@3.0.0',
     'underscore',
-    'webapp',
+    'webapp@1.13.8 || 2.0.0',
   ], 'server');
 
   api.use([
-    'accounts-base',
+    'accounts-base@2.0.0 || 3.0.0',
   ], 'server', {weak: true});
 
   api.addFiles([
@@ -46,7 +45,7 @@ Package.onTest(function (api) {
     'check',
     'http',
     'jquery',
-    'mongo',
+    'mongo@1.0.0 || 2.0.0',
     'random',
     'simple:json-routes',
     'simple:rest',
